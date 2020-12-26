@@ -11,3 +11,48 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+.nav-heading{
+  font-size: 25px;
+  font-weight: bolder;
+}
+.landing-container{
+  position: relative;
+  margin-top: 2px;
+  background-image: url('https://images.squarespace-cdn.com/content/v1/5d05f1f3b645950001b86a8a/1575988145523-POB8KXPT1EJ0LDV0O1ZX/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/green-chameleon-s9CC2SKySJM-unsplash+2+copy.jpg?format=2500w');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 90vh;
+}
+.description{
+  color: white;
+  height: 100%;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.heading{
+  display: block;
+  font-size: 3em;
+  font-weight: bolder;
+}
+.heading-two{
+  display: block;
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+
+/* common css */
+.bg-black{
+  background-color: black;
+}
+.text-white{
+  color: white;
+} 
