@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { Header,Landing } from './';
+import { Header,Landing } from './';
 
 class App extends Component {
   render() {
@@ -10,3 +10,6 @@ class App extends Component {
       </div>
     );
   }
+}
+
+export default App;

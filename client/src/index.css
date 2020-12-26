@@ -15,7 +15,7 @@ code {
 
 
 .nav-heading{
-  font-size: 25px;
+  font-size: 21px;
   font-weight: bolder;
 }
 .landing-container{
@@ -28,7 +28,7 @@ code {
   height: 90vh;
 }
 .description{
-  color: white;
+  color: whitesmoke;
   height: 100%;
   width: 80%;
   margin: auto;
@@ -43,16 +43,11 @@ code {
   font-size: 3em;
   font-weight: bolder;
 }
-.heading-two{
-  display: block;
-  font-size: 1.5em;
-  font-weight: bolder;
-}
 
 /* common css */
 .bg-black{
-  background-color: black;
+  background-color: gray;
 }
 .text-white{
-  color: white;
+  color: orange;
 } 
