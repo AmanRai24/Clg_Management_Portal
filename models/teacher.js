@@ -1,5 +1,4 @@
 const mongoose=require("mongoose");
-const {model} =require('../config/mongoose');
 
 //Schema
 const teacherSchema=new mongoose.Schema(

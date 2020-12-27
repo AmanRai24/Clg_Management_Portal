@@ -1,11 +1,13 @@
 const express = require('express');
 const port = 8000;
 const app = express();
+const cors = require('cors');
 
 const db = require("./config/mongoose");
 
 const bodyParser = require("body-parser");
 
+app.use(cors());
 //to fetch data from url
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
