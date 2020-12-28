@@ -1,29 +1,28 @@
-const teacher = require('../models/teacher');
+const Teacher = require('../models/teacher');
 const bcrypt = require('bcryptjs');
 
 module.exports.register = async function(req,res){
     try {
-        // console.log(req.body);
-        if (!req.body.email || !req.body.name || !req.body.password || !req.body.confirmPassword){
+        if (!req.body.email || !req.body.name ||!req.body.subject || !req.body.password || !req.body.confirmPassword){
             return res.status(404).json({
                 message: "Enter valid text"
             });
         }else {
-            let teacher = await teacher.findOne({email: req.body.email});
+            let teacher = await Teacher.findOne({email: req.body.email});
             if(!teacher){
                 let salt = await bcrypt.genSalt(10);
                 let hash = await bcrypt.hash(req.body.password, salt);
-                let newteacher = await teacher.create({
+                let newTeacher = await Teacher.create({
                     email: req.body.email,
                     name: req.body.name,
+                    subject: req.body.subject,
                     password: hash
                 });
-                newteacher.save();
-                console.log('newteacher',newteacher);
+                newTeacher.save();
                 return res.status(200).json({
                     success: true,
                     message: "teacher Register Successfully!",
-                    id:  newteacher._id,
+                    id: newTeacher._id,
                 });
             }
             else{
@@ -43,9 +42,7 @@ module.exports.register = async function(req,res){
 
 module.exports.login = async function(req,res){
     try {
-        // console.log(req.body);
-        let teacher = await teacher.findOne({email: req.body.email})
-        // console.log(teacher.email);
+        let teacher = await Teacher.findOne({email: req.body.email})
         if(!teacher || !bcrypt.compareSync(req.body.password,teacher.password)){
             return res.status(422).json({
                 success:false,

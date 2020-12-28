@@ -15,7 +15,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/json" }));
 
 //use express router
-app.use('/', require('./routes'));
+app.use('/', require('./routes/index'));
 
 app.listen(port, function(err){
     if(err){

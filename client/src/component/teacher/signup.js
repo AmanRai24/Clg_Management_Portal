@@ -9,9 +9,9 @@ class Signup extends Component {
         super(props);
         this.state={
             email: '',
+            name: '',
             subject:'',
             password: '',
-            name: '',
             confirmPassword: '',
         }
     }
@@ -22,13 +22,13 @@ class Signup extends Component {
     };
     onFormSubmit = (e) => {
         e.preventDefault();
-        const { email, password, confirmPassword, name, subject } = this.state;
+        const { email,name, subject, password, confirmPassword, } = this.state;
 
         if(confirmPassword !== password){
             this.props.dispatch(adminSignupFailed('Password and confirm-password not match!'));
-        }else if (email && password && confirmPassword && name && subject) {
+        }else if (email&& name && subject && password && confirmPassword ) {
             this.props.dispatch(startAdminSignup());
-            this.props.dispatch(adminSignup(email, password, confirmPassword, name, subject));
+            this.props.dispatch(adminSignup(email,name,subject, password, confirmPassword, ));
         }else{
             this.props.dispatch(adminSignupFailed('Enter valid field!'));
         }

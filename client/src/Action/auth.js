@@ -86,7 +86,7 @@ export function adminSignupFailed(error) {
     error,
   };
 }
-export function adminSignup(email, password, confirmPassword, name, subject) {
+export function adminSignup(email, name, subject, password, confirmPassword,) {
   return (dispatch) => {
     const url = APIUrls.adminSignup();
     fetch(url, {
@@ -96,10 +96,10 @@ export function adminSignup(email, password, confirmPassword, name, subject) {
       },
       body: getFormBody({
         email,
+        name,
+        subject,
         password,
         confirmPassword,
-        name,
-        subject
       }),
     })
       .then((response) => response.json())
