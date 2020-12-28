@@ -8,15 +8,15 @@
 
   1. [Loging] => (email,password)
   2. [Signup] => (name,email,subject,password)
-  3. [Add NEW ASSIGNMENT[] => (FILE,TITLE, DESCRIPTION,DEADLINE)
-  4. See who SUBMIITED in his ASSIGNMENT.
-  5. Grade the assignment
+  3. [Add New Assignment[] => (FILE,TITLE, DESCRIPTION,DEADLINE)
+  4. See who SUBMIITED the assignment.
+  5. can GRADE the student assignment.
 
 - STUDENT 
   1. [Loging] => (email,password)
   2. [Signup] => (name,email,password)
-  3. See All upcoming ASSIGNMENT.
-  4. can Submit the ASSIGNMENT.
+  3. See All upcoming assignment.
+  4. can Submit the assignment.
   5. can see the score of the assignment
 
 ## Folder Structure
