@@ -17,7 +17,7 @@ class header extends Component {
         isLoggedin = (isLoggedin || isToken())
         return (
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a className="navbar-brand nav-heading ml-4" href="/">
+                <a className="navbar-brand nav-heading ml-4" href="/teacher/login">
                     <i className="fas fa-graduation-cap"></i> COLLEGE PORTAL
                 </a>
                 <div className="ml-auto mr-0">
