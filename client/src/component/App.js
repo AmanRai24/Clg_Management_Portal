@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Header from './header';
+import { connect } from 'react-redux';
 import Landing from './landing';
 import { Login ,Signup,home } from './teacher';
 import {
@@ -10,18 +10,12 @@ import {
 
 class App extends Component {
   render() {
+    const { auth } = this.props;
     return (
       <Router>
         <div>
           <Switch>
-            <Route exact path='/' render={()=>{
-              return (
-                <div>
-                  <Header />
-                  <Landing />
-                </div>
-              );
-            }} />
+            <Route exact path='/' component={Landing} />
             <Route exact path='/teacher/login' component={Login} />
             <Route exact path='/teacher/signup' component={Signup} />
             <Route exact path='/teacher/home' component={home} />
@@ -34,4 +28,9 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStoreToProps(state) {
+  return {
+    auth: state.auth,
+  };
+}
+export default connect(mapStoreToProps)(App);

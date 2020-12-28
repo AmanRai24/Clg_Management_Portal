@@ -15,6 +15,7 @@ import { getFormBody } from '../helpers/utils';
 
 //logout user
 export function logoutUser() {
+  localStorage.removeItem('token');
   return {
     type: LOG_OUT,
   };
@@ -57,9 +58,9 @@ export function adminLogin(email, password) {
         .then((data) => {
 
           if (data.success) {
-            // console.log('login data:', data.id);
-            // localStorage.setItem('token', data.data.token);
-            dispatch(adminLoginSuccess(data));
+            console.log('login data:', data);
+            localStorage.setItem('token', data.user.token);
+            dispatch(adminLoginSuccess(data.user));
             return;
           }
           dispatch(adminLoginFailed(data.message));
@@ -106,8 +107,8 @@ export function adminSignup(email, name, subject, password, confirmPassword,) {
       .then((data) => {
         console.log('all:',data);
         if (data.success) {
-          // localStorage.setItem('token', data.data.token);
-          dispatch(adminLoginSuccess(data));
+          
+          dispatch(adminSignupSuccessful(data));
           return;
         }
         dispatch(adminSignupFailed(data.message));

@@ -1,18 +1,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { Header } from './index';
+import { isToken } from '../../helpers/utils';
+import { Header,AddAssignment,Allassignment } from './index';
 
 class home extends Component {
+    constructor(props){
+        super(props)
+    }
+    componentDidUpdate(){
+    }
     render() {
-        const { isLoggedin } = this.props.auth;
+        let { isLoggedin} = this.props.auth;
+        isLoggedin = (isLoggedin || isToken());
         if(!isLoggedin){
             return <Redirect to='/teacher/login' />;
         }
         return (
             <div>
                 <Header />
-                <h1>Home</h1>
+                <AddAssignment />
+                <div className="display-properties">
+                    <Allassignment />
+                </div>
             </div>
         );
     }

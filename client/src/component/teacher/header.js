@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../Action/auth';
-// import { Redirect } from 'react-router-dom';
+import { isToken } from '../../helpers/utils';
 import './teacher.css';
 
 class header extends Component {
@@ -13,7 +13,8 @@ class header extends Component {
 
     }
     render() {
-        const { isLoggedin } = this.props.auth;
+        let { isLoggedin } = this.props.auth;
+        isLoggedin = (isLoggedin || isToken())
         return (
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a className="navbar-brand nav-heading ml-4" href="/">

@@ -1,4 +1,5 @@
 const Teacher = require('../models/teacher');
+const jwt = require("jsonwebtoken");
 const bcrypt = require('bcryptjs');
 
 module.exports.register = async function(req,res){
@@ -7,7 +8,12 @@ module.exports.register = async function(req,res){
             return res.status(404).json({
                 message: "Enter valid text"
             });
-        }else {
+        }else if(req.body.password != req.body.confirmPassword){
+            return res.status(404).json({
+                message: "Pasword and confirm Password doesn't match!"
+            });
+        }
+        else {
             let teacher = await Teacher.findOne({email: req.body.email});
             if(!teacher){
                 let salt = await bcrypt.genSalt(10);
@@ -22,7 +28,6 @@ module.exports.register = async function(req,res){
                 return res.status(200).json({
                     success: true,
                     message: "teacher Register Successfully!",
-                    id: newTeacher._id,
                 });
             }
             else{
@@ -52,7 +57,13 @@ module.exports.login = async function(req,res){
             return res.status(200).json({
                 success: true,
                 message: "Sign in successfully",
-                id:  teacher._id
+                user: {
+                    token: jwt.sign(teacher.toJSON(), "clgportal", {
+                        expiresIn: 100000000,
+                      }),
+                      id:  teacher._id,
+                      name: teacher.name
+                },
             });
         }
     }catch (err) {
