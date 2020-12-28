@@ -2,7 +2,7 @@ const passport = require("passport");
 const JWTStrategy = require("passport-jwt").Strategy;
 const ExtractJWT = require("passport-jwt").ExtractJwt;
 
-const teacher = require("../models/teacher");
+const Teacher = require("../models/teacher");
 
 let opts = {
   jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
@@ -11,7 +11,7 @@ let opts = {
 
 passport.use(
   new JWTStrategy(opts, function (jwtPayLoad, done) {
-    teacher.findById(jwtPayLoad._id, function (err, teacher) {
+    Teacher.findById(jwtPayLoad._id, function (err, teacher) {
       if (err) {
         console.log("Error in finding teacher!");
         return;
