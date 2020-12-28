@@ -52,3 +52,8 @@ code {
 .text-white{
   color: orange;
 } 
+
+.success-dailog{
+  background-color: #46b346;
+  color: white;
+}

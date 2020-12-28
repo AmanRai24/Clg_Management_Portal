@@ -16,5 +16,18 @@ export const ADD_ASSIGNMENT_START = 'ADD_ASSIGNMENT_START';
 export const ADD_ASSIGNMENT_SUCCESS = 'ADD_ASSIGNMENT_SUCCESS';
 export const ADD_ASSIGNMENT_FAILED = 'ADD_ASSIGNMENT_FAILED';
 
-//fetch assignment of user
+//fetch assignment of student
 export const FETCH_ASSIGNMENT = 'FETCH_ASSIGNMENT'; 
+
+//-- ACTIONS FOR student
+export const FETCH_ALL_ASSIGNMENT = 'FETCH_ALL_ASSIGNMENT';
+
+//login action type
+export const USER_LOGIN_START = 'USER_LOGIN_START';
+export const USER_LOGIN_SUCCESS = 'USER_LOGIN_SUCCESS';
+export const USER_LOGIN_FAILED = 'USER_LOGIN_FAILED';
+
+//signup action type
+export const USER_SIGNUP_START = 'USER_SIGNUP_START';
+export const USER_SIGNUP_SUCCESS = 'USER_SIGNUP_SUCCESS';
+export const USER_SIGNUP_FAILED = 'USER_SIGNUP_FAILED'; 

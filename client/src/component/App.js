@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Landing from './landing';
 import { Login ,Signup,home } from './teacher';
+import {userLogin,userSignup } from './student';
 import {
   BrowserRouter as Router,
   Route,
@@ -19,6 +20,10 @@ class App extends Component {
             <Route exact path='/teacher/login' component={Login} />
             <Route exact path='/teacher/signup' component={Signup} />
             <Route exact path='/teacher/home' component={home} />
+
+            {/* <Route exact path='/student'/> */}
+            <Route exact path='/student/login' component={userLogin} />
+            <Route exact path='/student/signup' component={userSignup} />
           </Switch>
 
         </div>
