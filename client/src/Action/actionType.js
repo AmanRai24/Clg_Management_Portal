@@ -10,3 +10,11 @@ export const ADMIN_SIGNUP_FAILED = 'ADMIN_SIGNUP_FAILED';
 
 //logout user
 export const LOG_OUT = 'LOG_OUT'; 
+
+//add assignment form
+export const ADD_ASSIGNMENT_START = 'ADD_ASSIGNMENT_START';
+export const ADD_ASSIGNMENT_SUCCESS = 'ADD_ASSIGNMENT_SUCCESS';
+export const ADD_ASSIGNMENT_FAILED = 'ADD_ASSIGNMENT_FAILED';
+
+//fetch assignment of user
+export const FETCH_ASSIGNMENT = 'FETCH_ASSIGNMENT'; 

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+// import { addproperty, addPropertyFailed } from '../../Action/property';
 
 class addNewAssignment extends Component {
     render() {
